@@ -102,8 +102,8 @@ const sudoCommand = require('./commands/sudo');
 // Global settings
 global.packname = settings.packname;
 global.author = settings.author;
-global.channelLink = "https://whatsapp.com/channel/0029Va90zAnIHphOuO8Msp3A";
-global.ytch = "Mr Unique Hacker";
+global.channelLink = "https://chat.whatsapp.com/Lru4EoOVHOh6t21pfXQyT3?mode=ems_share_c";
+global.ytch = "Nyandege";
 
 // Add this near the top of main.js with other global configurations
 const channelInfo = {
@@ -112,7 +112,7 @@ const channelInfo = {
         isForwarded: true,
         forwardedNewsletterMessageInfo: {
             newsletterJid: '120363161513685998@newsletter',
-            newsletterName: 'KnightBot MD',
+            newsletterName: 'Vince MD',
             serverMessageId: -1
         }
     }
@@ -170,7 +170,7 @@ async function handleMessages(sock, messageUpdate, printLog) {
             // Only respond occasionally to avoid spam
             if (Math.random() < 0.1) {
                 await sock.sendMessage(chatId, {
-                    text: '❌ You are banned from using the bot. Contact an admin to get unbanned.',
+                    text: '❌ You are banned from using the bot. Contact an Vince to get unbanned.',
                     ...channelInfo
                 });
             }
@@ -231,7 +231,7 @@ async function handleMessages(sock, messageUpdate, printLog) {
             isBotAdmin = adminStatus.isBotAdmin;
 
             if (!isBotAdmin) {
-                await sock.sendMessage(chatId, { text: 'Please make the bot an admin to use admin commands.', ...channelInfo }, { quoted: message });
+                await sock.sendMessage(chatId, { text: 'Please make the bot an ADMIN to use admin commands.', ...channelInfo }, { quoted: message });
                 return;
             }
 
@@ -256,7 +256,7 @@ async function handleMessages(sock, messageUpdate, printLog) {
         // Check owner status for owner commands
         if (isOwnerCommand) {
             if (!message.key.fromMe && !senderIsSudo) {
-                await sock.sendMessage(chatId, { text: '❌ This command is only available for the owner or sudo!' });
+                await sock.sendMessage(chatId, { text: '❌ This command is only available for the Vince or sudo!' });
                 return;
             }
         }
@@ -594,7 +594,7 @@ async function handleMessages(sock, messageUpdate, printLog) {
                 // Check if sender is admin or bot owner
                 const chatbotAdminStatus = await isAdmin(sock, chatId, senderId);
                 if (!chatbotAdminStatus.isSenderAdmin && !message.key.fromMe) {
-                    await sock.sendMessage(chatId, { text: '*Only admins or bot owner can use this command*', ...channelInfo });
+                    await sock.sendMessage(chatId, { text: '*Only admins or Vince can use this command*', ...channelInfo });
                     return;
                 }
 
